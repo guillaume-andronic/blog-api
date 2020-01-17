@@ -2,3 +2,5 @@ name: test
 on: push
 jobs:
     code_quality:
+    steps:
+      - uses: actions/checkout
