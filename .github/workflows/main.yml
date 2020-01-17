@@ -1,0 +1,18 @@
+stages:
+    - code_quality
+    - test
+    - deploy
+
+test_unit:
+    stage: test
+    image: gandronic/blog_php
+    before_script:
+    - composer install
+    script: bin/phpunit
+
+hadolint
+    stage: code_quality
+    image: hadolint/hadolint
+    script: 
+    - hadolint Dockerfile
+
